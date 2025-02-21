@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header_resize">
+                <div class="logo">
+                    <h1><a href="index.html"></a></h1>
+                </div>
+                <div class="menu_nav">
+                    <ul>
+                        <li class="active"><a href="index.html">Home Page</a></li>
+                        <li><a href="index.html">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="content_resize">
+                <div class="mainbar">
+                    <div class="article">
+                        <form id="form1" name="form1" method="post" action="AdminAuthentication.jsp">
+                            <h2 class="style30">Welcome To Bank Admin Login</h2>
+                            <table>
+                                <tr>
+                                    <td><label>Select Bank (required)</label></td>
+                                    <td>
+                                        <select name="bank">
+                                            <option>Select</option>
+                                            <option>Bank of Maharashtra</option>
+                                            <option>Canara Bank</option>
+                                            <option>Corporation Bank</option>
+                                            <option>Karnataka Bank</option>
+                                            <option>SBI Bank</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>User Name (required)</label></td>
+                                    <td><input type="text" name="userid" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Password (required)</label></td>
+                                    <td><input type="password" name="pass" required></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="Login">
+                                        <span>New Admin? <a href="AdminRegister.jsp">Register</a></span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p><a href="Adminlogin.jsp">Back</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
