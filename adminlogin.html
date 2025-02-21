@@ -3,24 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="stylesheet" href="unistyles.css"/>
     <title>Admin Login Page</title>
-    <link rel="stylesheet" href="css/style.css">
+   
 </head>
+<Style>
+
+    *{
+        margin: 0px;
+      
+        box-sizing: border-box;
+    }
+    .main{
+        background-color: #ededfc;
+        height: 100vh;
+        width: 100%;
+       
+
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding:10%;
+    }
+    .bank-logo{
+        font-size: 70px;
+        
+    }
+    #form1{
+        border-radius: 12px;
+        border: 4px solid #15161a;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</Style>
 <body>
     <div class="main">
-        <div class="header">
-            <div class="header_resize">
+        <div class="header" style="padding-top: 20px;">
+           
                 <div class="logo">
-                    <h1><a href="index.html"></a></h1>
+                    <h1><a href="index.html"><span><i class="fi fi-br-money-transfer-coin-arrow"></i></span></a></h1>
                 </div>
-                <div class="menu_nav">
+                <div class="menu_nav" style="margin-left: auto;">
                     <ul>
                         <li class="active"><a href="index.html">Home Page</a></li>
                         <li><a href="index.html">Logout</a></li>
                     </ul>
                 </div>
                 <div class="clr"></div>
-            </div>
+           
         </div>
         
         <div class="content">
@@ -29,7 +67,8 @@
                     <div class="article">
                         <form id="form1" name="form1" method="post" action="AdminAuthentication.jsp">
                             <h2 class="style30">Welcome To Bank Admin Login</h2>
-                            <table>
+                            <p class="bank-logo"><i class="fi fi-br-bank"></i></p>
+                            <table style="display: flex;flex-direction: column;justify-content: center;">
                                 <tr>
                                     <td><label>Select Bank (required)</label></td>
                                     <td>
@@ -52,10 +91,15 @@
                                     <td><input type="password" name="pass" required></td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    
                                     <td>
-                                        <input type="submit" value="Login">
-                                        <span>New Admin? <a href="AdminRegister.jsp">Register</a></span>
+                                        <input width="800" type="submit" value="Login"><br/>
+                                      
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>New Admin? <a href="AdminRegister.jsp">Register</a></p>
                                     </td>
                                 </tr>
                             </table>
