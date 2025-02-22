@@ -462,6 +462,90 @@ padding-top: 10px;
     color: inherit;
     margin: 0px;
 }
+.project-card {
+  position: relative; /* Needed for the pseudo-element */
+  padding: 0;
+  background-color: #15161a;
+  margin: 20px;
+  border-radius: 12px;
+  width: 80%;
+  height: 450px;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+ 
+}
+
+/* Animated multicolor border */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(
+    60deg,
+    #ff4d4d,
+    #ffb84d,
+    #4dff88,
+    #4da6ff,
+    #b84dff,
+    #ff4da6,
+    #ff4d4d
+  );
+  background-size: 400% 400%;
+  border-radius: 16px;
+  z-index: -1;
+  animation: borderAnimation 6s ease infinite;
+}
+
+/* Keyframes for gradient movement */
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.project-card img {
+  height:440px;
+  width: 40%;
+  margin:5px 0px 5px 5px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.project-card div {
+  margin:5px 5px 5px 0px;
+  background-color: #15161a;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  text-align: left;
+  align-items: center;
+  padding: 20px;
+  width: 60%;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.project-card div h2 {
+  color: #3f52cb;
+  margin: 0;
+  font-size: 33px;
+}
+.project-card div p{
+  font-size: 16px;
+}
 </style>
 <body>
     <div class="main">
@@ -554,15 +638,18 @@ padding-top: 10px;
               <div class="content">
               
                   <div class="mainbar">
-                    <div class="article">
+                    <div class="article" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
                       <h2 style="font-size: 25px;text-align: center;"><span><i class="fi fi-br-bank"></i>  Welcome to Bank ::<span style="color: #1227b8;"><%=(String)application.getAttribute("vbank")%></span></h2>
                       
                       <div class="clr"></div>
-                      <div class="img">
-                        <div align="center">
-                          <p style="font-size:20px;" class="style41">Securing Banking Transactions with Blockchain | A Tokenless Approach</p>
+                      <section id="projectcard" class="project-card">
+                        <img src="https://t3.ftcdn.net/jpg/01/36/33/14/360_F_136331491_vRh0iHpvyi5juqXvbtujaibNIj6Xvyoh.jpg" />
+                        <div>
+                          <h2>Securing Banking Transactions with Blockchain - Tokenless Approach</h2>
+                          <p>Increasing digital technology has revolutionized the life of people. There are many threats and frauds detected in banking system. A centralized database is used by banking system which makes the attacker easy to get access to data and this makes the system insecure. The drawback of this centralized system can be reduced by reforming the system by implementing blockchain technology without using tokens. Blockchain uses decentralized architecture for storing and accessing data over the database. This reduces attacks on database hacked. Transactions done through blockchain technology are verified by each block in the chain, which will make the transaction more secure and help banking system
+                            work faster.</p>
                         </div>
-                      </div>
+                      </section>
                       <div class="post_content">          </div>
                       <div class="clr"></div>
                     </div>
