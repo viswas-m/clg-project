@@ -1,18 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>User_Main  Page</title>
+<title>View All Requests</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-
 <script type="text/javascript" src="js/cufon-yui.js"></script>
 <script type="text/javascript" src="js/cufon-chunkfive.js"></script>
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/coin-slider.min.js"></script>
+
+</head>
 <style>
+    
     @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    *{
+        box-sizing: border-box;
+    }
 html{
     scroll-behavior: smooth;
   }
@@ -20,20 +25,9 @@ html{
       margin: 0px;
       box-sizing: border-box;
        font-family: "Poppins";
-    }
-  .main-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.main{
-        background-color: #ededfc;
-        height: 100%;
-        width: 100%;
        
-
-    }
+      
+  }
 .header{
     display: flex;
     flex-direction: row;
@@ -44,6 +38,19 @@ html{
     text-decoration: none;
     color:#15161a!important;
     height: 80px;
+
+}
+.main-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    background-color: #ededfc;
+    height: 100%;
+    width: 100%;
+   
 
 }
 .logo{
@@ -65,12 +72,10 @@ html{
     flex-direction: row;
     justify-content: center;
     align-items: center;
- 
     text-decoration: none;
     color: inherit;
     list-style-type: none;
     margin-right: 20px;
-   
 
 }
 .menu_nav ul li{
@@ -259,9 +264,6 @@ opacity: 1;
 input:checked + .slide-container .nav label { display: block; }
 
 /* end of slider */
-
-
-
 footer {
     background-color:#15161a;
     color: #f1f1f1;
@@ -347,111 +349,19 @@ footer {
   }
 
 
-
-
-.login-button{
-    background-color:#15161a;
-    color: white;
-    cursor: pointer;
-    margin:10px;
-}
-.searchform{
-          width: 50%;
-         
-        }
-        #formsearch{
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          padding: 0px 20px 0px 20px;
-          border: 2px solid black;
-          border-radius: 12px;
-          height: 50px;
-        }
-        #formsearch i{
-          font-size: 18px;
-          font-weight: 700;
-        }
-        .editbox_search{
-          background-color: transparent;
-          border: none;
-          outline: none;
-          color: #15161a;
-          font-size: 20px;
-          font-weight: 700;
-          width: 100%;
-        }
-        .sidebar{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.sidebar .gadget .star{
-  color:#1227b8;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  margin: 30px 0px 0px 0px;
-}
-.sidebar .gadget p{
-  text-align: center;
-  margin:0px 0px 10px 0px;
-  font-size: 25px;
-  font-weight: 500;
-}
-.sb_menu{
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.sb_menu li{
-  margin-right: 20px;
-  color:#15161a;
-  font-size: 20px;
-  border: 3px solid #1227b8;
-  background-color: white;
-  border-radius: 12px;
-  padding: 5px 20px 5px 20px;
-  margin-bottom: 20px;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.sb_menu li a{
-  text-decoration: none;
-  color: inherit;
-  margin: 0px;
-}
-.sb_menu li i{
-  margin: 0px;
-  margin-left: 8px;
-  margin-bottom: -5px;
-  font-size: 22px;
-}
-.sb_menu li:hover{
-  background-color: #15161a;
-  color: white;
-  border: 3px solid white;
-}
-.back-button{
+  .back-button{
     font-size: 18px;
 background-color: #b3b4bd;
 border-radius: 20px;
 font-weight: 600;
 color:#15161a;
 width: 120px;
-height: 38px;
+height: 42px;
 text-align: center;
 border:2px solid #15161a;
-
+margin-left:auto;
 margin-top:20px;
-padding-top: 10px;
+padding:5px 10px 15px 10px;
 }
 .back-button:hover{
     background-color: #15161a;
@@ -462,120 +372,123 @@ padding-top: 10px;
     color: inherit;
     margin: 0px;
 }
-.project-card {
-  position: relative; /* Needed for the pseudo-element */
-  padding: 0;
-  background-color: #15161a;
-  margin: 20px;
-  border-radius: 12px;
-  width: 80%;
-  height: 450px;
-  color: white;
-  overflow: hidden;
-  display: flex;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1;
- 
-}
 
-/* Animated multicolor border */
-.project-card::before {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  background: linear-gradient(
-    60deg,
-    #ff4d4d,
-    #ffb84d,
-    #4dff88,
-    #4da6ff,
-    #b84dff,
-    #ff4da6,
-    #ff4d4d
-  );
-  background-size: 400% 400%;
-  border-radius: 16px;
-  z-index: -1;
-  animation: borderAnimation 6s ease infinite;
+.login-button{
+    background-color:#15161a;
+    color: white;
+    cursor: pointer;
+    margin:10px;
 }
+/* serachbox */
 
-/* Keyframes for gradient movement */
-@keyframes borderAnimation {
-  0% {
-    background-position: 0% 50%;
+.searchform{
+    width: 50%;
+   
   }
-  50% {
-    background-position: 100% 50%;
+  #formsearch{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+    border: 2px solid black;
+    border-radius: 12px;
+    height: 50px;
   }
-  100% {
-    background-position: 0% 50%;
+  #formsearch i{
+    font-size: 18px;
+    font-weight: 700;
   }
-}
+  .editbox_search{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #15161a;
+    font-size: 20px;
+    font-weight: 700;
+    width: 100%;
+  }
 
-
-.project-card img {
-  height:440px;
-  width: 40%;
-  margin:5px 0px 5px 5px;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
-
-.project-card div {
-  margin:5px 5px 5px 0px;
-  background-color: #15161a;
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
-  text-align: left;
-  align-items: center;
+  /* table */
+  .content {
   padding: 20px;
-  width: 60%;
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
 }
 
-.project-card div h2 {
-  color: #3f52cb;
-  margin: 0;
-  font-size: 33px;
+.content_resize {
+  max-width: 1200px;
+  margin: auto;
 }
-.project-card div p{
-  font-size: 16px;
+
+.gadget {
+  background-color: #fff;
+  border: 2px solid #15161a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+h2, .style10, .style14 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1227b8;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table th, table td {
+  text-align: center;
+ padding: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+}
+
+table th {
+  background-color: #1227b8;
+  color: #fff;
+  font-weight: 600;
+}
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 </style>
-</head>
 <body>
 <div class="main">
   <div class="header">
     
       <div class="logo">
-        <h1><a href="index.html"><span><i class="fi fi-br-money-transfer-coin-arrow"></i></span></a></h1>
+        <h1><a href="index.html"><span>  <i class="fi fi-br-money-transfer-coin-arrow"></i></span></a></h1>
       </div>
-      <div class="menu_nav">
+      <div class="menu_nav" style="margin-left: auto;">
         <ul>
-          <li class="active"><a href="index.html"><span>Home Page</span></a></li>
+          <li class="active"><a href="UMain.jsp"><span>Home Page</span></a></li>
           <li><a href="index.html"><span>logout</span></a></li>
         </ul>
       </div>
-      <div class="clr"></div>
+      <!-- <div class="clr"></div>
       
-      <div class="clr"></div>
-    </div>
- 
+      <div class="clr"></div> -->
+    
+  </div>
   <div class="main-body">
-    <div class="searchform">
-        <form id="formsearch" name="formsearch" method="post" action="AdminAuthentication.jsp">
-          <span>
-          <input style="padding-top: 10px;" name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80" placeholder="Search our site:" type="text" />
-          </span>
-          <p><i class="fi fi-br-search"></i></p>
-        </form>
-      </div>
-      <div class="carousel">
+
+    <div class="carousel">
         <ul class="slides">
           <input type="radio" name="radio-buttons" id="img-1" checked />
           <li class="slide-container">
@@ -639,59 +552,135 @@ padding-top: 10px;
           </div>
         </ul>
       </div>
-      <div class="content">
+
+    <div class="content">
         <div class="content_resize">
-          
-          <div class="mainbar">
-            <div class="article" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
-             
-                <h2><i style="margin-top:20px;" class="fi fi-br-circle-user"></i> Welcome To  User :: <span class="style15" style="color: #1227b8;"><%=(String)application.getAttribute("uname")%></span></h2>
-              <div class="clr"></div>
-              <section id="projectcard" class="project-card">
-                <img src="https://t3.ftcdn.net/jpg/01/36/33/14/360_F_136331491_vRh0iHpvyi5juqXvbtujaibNIj6Xvyoh.jpg" />
-                <div>
-                  <h2>Securing Banking Transactions with Blockchain - Tokenless Approach</h2>
-                  <p>Increasing digital technology has revolutionized the life of people. There are many threats and frauds detected in banking system. A centralized database is used by banking system which makes the attacker easy to get access to data and this makes the system insecure. The drawback of this centralized system can be reduced by reforming the system by implementing blockchain technology without using tokens. Blockchain uses decentralized architecture for storing and accessing data over the database. This reduces attacks on database hacked. Transactions done through blockchain technology are verified by each block in the chain, which will make the transaction more secure and help banking system
-                    work faster.</p>
-                </div>
-              </section>
-              <div class="post_content">          </div>
-              <div class="clr"></div>
-            </div>
-          </div>
-          <div class="sidebar">
-           
-            <div class="clr"></div>
+          <div class="sb_menu">
             <div class="gadget">
-              <h2 class="star"><span>User</span> Menu</h2>
-              <p>Explore the items in the menu</p>
+              <table width="544" border="0" cellspacing="2" cellpadding="2">
+                <tr>
+                  <td width="536"><span class="style10 style14">View  All Mini Statements(Via Auditor)</span></td>
+                </tr>
+              </table>
               <div class="clr"></div>
-              <ul class="sb_menu">
-                <li class="style13"><a href="UserMain.jsp">Home</a></li>
-                <li><span class="style13"><a href="UserProfile.jsp">View My  Profile</a></span></li>
-               
-                <li><a href="U_AccountNumber.jsp">Request Account Number</a></li>
-                <li><a href="Via Bank &amp; Auditor Transctions.jsp">Deposit Money,Transfer Money to Bank via Auditor.</a></li>
-                <li><a href="DTW.jsp">Deposit Amount To Bank  Via Agent </a></li>
-                <li><a href="U_View_MiniStatement.jsp">View Mini Statement for all transactions Via Auditor </a></li>
-                 <li><a href="U_View_MiniStatement1.jsp">View Mini Statement for all transactions Via Agent </a></li>
-              </ul>
-              <!-- <a href="U_MiniStatement.jsp" class="sb_menu style14"></a> -->
-              <ul class="" style="list-style-type: none;display:flex;margin-left:80%;">
-                <li class="back-button"><a href="index.html">Logout</a></li>
-              </ul>
+              <p>&nbsp;</p>
+              <div class="table-container">
+                <table width="1131" align="center"  cellpadding="0" cellspacing="0"  ">
+                    <tr style="background-color: #15161a;">
+           
+                      <td  width="129" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">User Name</div></td>
+                      <td  width="147" valign="middle" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">Bank Name</div></td>
+                      <td  width="149" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">From Account No </div></td>
+                                    <td  width="149" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">To Account No </div></td>
+                      <td  width="94" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">Amount</div></td>
+                      <td  width="94" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">Date and Time</div></td>
+                       <td  width="94" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">From</div></td>
+                      <td  width="251"  valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">Status(Transfer To Bank)</div></td>
+                       <td></td>
+                    </tr>
+                    <%@ include file="connect.jsp" %>
+                    <%
+                              String s1,s2,s3,s4,s5,s6,s7,s8;
+                                int i=0;
+                                try 
+                                {
+                                
+                                String uname=(String)application.getAttribute("uname");
+                                
+                                       String query="select * from auditor_transfer where uname='"+uname+"' "; 
+                                       Statement st=connection.createStatement();
+                                       ResultSet rs=st.executeQuery(query);
+                                       while ( rs.next() )
+                                       {
+                                    
+                                        s1=rs.getString(1); //uname
+                                        s2=rs.getString(2); // Bank Name
+                                        s3=rs.getString(3); // from acno
+                                        s4=rs.getString(4);	// To Acno			 				
+                                        s5=rs.getString(5); // Amount
+                                        s6=rs.getString(6); // Status
+                                        s7=rs.getString(7); // Date and Time
+                                        s8=rs.getString(8); // From User
+                            %>
+                    <tr>
+                    
+                      <td height="84" align="center"  valign="middle"><div align="center" class="style94">
+                          <%out.println(s1);%>
+                      </div></td>
+                      <td align="center"  valign="middle"><div align="center" class="style94">
+                          <%out.println(s2);%>
+                      </div></td>
+                      <td height="84" align="center"  valign="middle"><div align="center" class="style94">
+                          <%out.println(s3);%>
+                      </div></td>
+                      <td height="84" align="center"  valign="middle"><div align="center" class="style94">
+                          <%out.println(s4);%>
+                       </div></td>
+                        
+                         <td height="84" align="center"  valign="middle"><div align="center" class="style94">
+                          <%out.println(s5);%> </div></td>
+                          
+                           <td height="84" align="center"  valign="middle"><div align="center" class="style94">
+                          <%out.println(s7);%> </div></td>
+                            <td height="84" align="center"  valign="middle"><div align="center" class="style94">
+                          <%out.println(s8);%> </div></td>
+                     
+                     
+                      <%
+                                if(s6.equalsIgnoreCase("No") )
+                                {
+                                
+                                %>
+                      <td valign="middle" height="84" style="color:#000000;"align="center"><div align="center">
+                        <div align="center" class="style20 style37 style46"> <%out.println(s6);%> 
+                          <span class="style97">(Due To InSufficient Amount)</span></div>
+                      </div></td>
+                      <%
+                                
+                            }else if(s6.equalsIgnoreCase("Yes")){
+                                %>
+                     <td width="137" align="center"  valign="middle"><div align="center" class="style94">
+                          <%out.println(s6);%>
+                      </div></td>
+                      <%}%>
+                    </tr>
+                    <%
+                                
+                                
+                            
+                        
+                            
+                            }
+                            }
+                            catch(Exception e)
+                            {
+                                out.println(e.getMessage());
+                            }
+                            %>
+                  </table>
+              </div>
+             
+              <!-- <p align="right"><a href="AdminMain.jsp" class="style11"></a></p>
+              <table width="1121" border="0" cellspacing="2" cellpadding="2">
+                <tr>
+                  <td width="906"><div align="left">
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p align="center"><a href="UserMain.jsp" class="style95">Back</a></p>
+                  </div></td>
+                </tr>
+              </table>
+              <h2>&nbsp;</h2> -->
+              <p class="back-button"><a href="UserMain.jsp" class="style95">Back</a></p>
             </div>
           </div>
           <div class="clr"></div>
         </div>
       </div>
-  </div>
-  
-  <div class="fbg">
-    <div class="fbg_resize"></div>
+
   </div>
 
-</div>
+
 <footer>
     <div class="footer-container">
       <div class="footer-section">
@@ -730,5 +719,6 @@ padding-top: 10px;
       &copy; 2025 Securing Banking Transactions with Blockchain | All rights reserved.
     </div>
   </footer>
+</div>
 </body>
 </html>

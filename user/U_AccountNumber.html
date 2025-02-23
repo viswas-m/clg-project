@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>View All Requests</title>
+<title>Request Account Number</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
@@ -427,13 +427,7 @@ border-radius: 12px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2, .style10, .style14 {
-font-size: 1.6rem;
-font-weight: bold;
-color: #1227b8;
-margin-bottom: 15px;
-text-align: center;
-}
+
 
 /* Table styling */
 table {
@@ -476,7 +470,7 @@ font-weight: 600;
       </div>
       <div class="menu_nav" style="margin-left: auto;">
         <ul>
-          <li class="active"><a href="UMain.jsp"><span>Home Page</span></a></li>
+          <li class="active"><a href="UserMain.jsp"><span>Home Page</span></a></li>
           <li><a href="index.html"><span>logout</span></a></li>
         </ul>
       </div>
@@ -486,6 +480,7 @@ font-weight: 600;
   
   </div>
   <div class="main-body">
+
     <div class="carousel">
       <ul class="slides">
         <input type="radio" name="radio-buttons" id="img-1" checked />
@@ -550,164 +545,211 @@ font-weight: 600;
         </div>
       </ul>
     </div>
+
     <div class="content">
       <div class="content_resize">
-        <div class="sb_menu">
-          <div class="gadget">
-            <div class="table-container" style="border:2px solid #15161a;">
-            <table width="544" cellspacing="2" cellpadding="2" >
-              <tr>
-                <td width="536" style="border: none;"><span class="style10 style14"><strong><marquee behavior="alternate">View  All Deposit Requests and Approve Via Auditor !!! </strong></marquee></span></td>
-              </tr>
-            </table>
-            </div>
-            <div class="clr"></div>
-            <p>&nbsp;</p>
-            <div class="table-container">
-            <table align="center"  cellpadding="0" cellspacing="0"  ">
-              <tr style="background-color: #15161a;">
-     
-                <td  width="129" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">User Name</div></td>
-                <td  width="147" valign="middle" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">Bank Name</div></td>
-                <td  width="149" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">Account No </div></td>
-                <td  width="94" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">Amount</div></td>
-          <td  width="94" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">Date and Time</div></td>
-           <td  width="94" valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">From</div></td>
-                <td  width="251"  valign="middle" height="34" style="font-size:18px;color:white;font-weight: 500;"><div align="center" class="style5 style56 style57">Status(Send To Bank)</div></td>
-                 <td></td>
-              </tr>
-              <%@ include file="connect.jsp" %>
-              <%
-              String s1,s2,s3,s4,s5,s6,s7,s8;
+        <div class="article" style=" border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);background-color: white;display:flex;flex-direction:column;padding:20px;">
+          <h2 class="" style="color: #1227b8;text-align: center;">Requesting for Account Number..</h2>
+          <div class="clr"></div>
+          <%@ include file="connect.jsp" %>
+          <%@ page import="java.util.*"%>
+          <%@ page import="java.text.*"%>
+          <%@ page import="java.util.Date"%>
+          <%@ page import="java.sql.*"%>
+          <%@ page import="com.oreilly.servlet.*,java.lang.*,java.text.SimpleDateFormat,java.io.*,javax.servlet.*, javax.servlet.http.*" %>
+          <%@ page import ="java.util.*,java.security.Key,java.util.Random,javax.crypto.Cipher,javax.crypto.spec.SecretKeySpec"%>
+          <%@ page import="org.bouncycastle.util.encoders.Base64"%>
+          <%@ page import="java.util.Random,java.io.PrintStream, java.io.FileOutputStream, java.io.FileInputStream, java.security.DigestInputStream, java.math.BigInteger, java.security.MessageDigest, java.io.BufferedInputStream" %>
+          <%	
+                          String keys = "ef50a0ef2c3e3a5f";
+                          byte[] keyValue = keys.getBytes();
+                          Key key = new SecretKeySpec(keyValue,"AES");
+                          Cipher c = Cipher.getInstance("AES");
+                          c.init(Cipher.ENCRYPT_MODE,key);
+                          String keyy = String.valueOf(keyValue);
+              
+              String user=(String )application.getAttribute("uname");
+              String bank=(String )application.getAttribute("ubank");
+            
+              String s1=null,s2=null,s3,s4,s5,s6;
               int i=0;
               try 
               {
-                   String query="select * from auditor_deposit "; 
-                   Statement st=connection.createStatement();
-                   ResultSet rs=st.executeQuery(query);
-                   while ( rs.next() )
+                
+                String query2="select * from accountrequest where user='"+user+"' and bank='"+bank+"'"; 
+                   Statement st2=connection.createStatement();
+                   ResultSet rs2=st2.executeQuery(query2);
+                   if ( rs2.next() )
                    {
                 
-                  s1=rs.getString(1);
-                  s2=rs.getString(2);
-                  s3=rs.getString(3);
-                  s4=rs.getString(4);								
-                  s5=rs.getString(5);
-                  s6=rs.getString(6);
-                  s7=rs.getString(7);
-            %>
-              <tr>
-              
-                <td height="84" align="center"  valign="middle"><div align="center" class="style94">
-                    <%out.println(s1);%>
-                </div></td>
-                <td align="center"  valign="middle"><div align="center" class="style94">
-                    <%out.println(s2);%>
-                </div></td>
-                <td height="84" align="center"  valign="middle"><div align="center" class="style94">
-                    <%out.println(s3);%>
-                </div></td>
-                <td height="84" align="center"  valign="middle"><div align="center" class="style94">
-                    <%out.println(s4);%>
-                  Rs/- </div></td>
+                  s2=rs2.getString(5);
+                  s3=rs2.getString(6);
+                  s4=rs2.getString(7);
+                
+                    if(s2.equalsIgnoreCase("Requested"))
+                    {%>
+          <!-- <div class="sidebar">
+            
+            <div class="clr"></div>
+            <div class="gadget">
+              <h2 class="star"><span>Sidebar</span> Menu</h2>
+              <div class="clr"></div>
+              <ul class="sb_menu">
+                <li class="style13"><a href="UserMain.jsp">Home</a></li>
+                <li class="style13"><a href="index.html">Logout</a></li>
+                <li><span class="style13"><a href="UserProfile.jsp"></a></span></li>
+                <li></li>
+              </ul>
+            </div>
+          </div> -->
+          <br/>
+          <p class="style15"><span class="style33" style="color:#1227b8;font-weight: 700;font-size: 20px;">Your Account Number is :</span> <span class="style32">Requested For Account Number </span> !!</p>
+          <%}
+                     else
+                    {
+                    
+                        String query1="select * from user where (username='"+user+"' and bank='"+bank+"') and transferstatus='Permitted'"; 
+                        Statement st1=connection.createStatement();
+                        ResultSet rs1=st1.executeQuery(query1);
+                        if ( rs1.next()==true )
+                        {
+                          
+                              if(s3.equalsIgnoreCase("Yes"))
+                              {
+                                  
+                                  %>
+          <br/>
+          <br/>
+          <br/>
+          <p class="style15"><span class="style35" style="font-weight: 700;font-size: 20px;">Your Account Number is :</span><span class="style37">
+            <%out.print(s2);%>
+          </span></p>
+       <p class="style15"><span class="style35" style="font-weight: 700;font-size: 20px;">Hash Code is :</span><span class="style37">
+            <%out.print(s4);%>
+          </span></p>
+          <%
+                              }
+                              else
+                              {
+                                  %>
+        
+          <p class="style15"><span class="style35" style="font-weight: 700;font-size: 20px;">Your Account Number is :</span><span class="style37">
+            <%out.print(s2);%>
+          </span></p>
+      
+       <p class="style15"><span class="style35" style="font-weight: 700;font-size: 20px;">Hash Code is :</span><span class="style37">
+            <%out.print(s4);%>
+          <%}
+                        }
+                        else
+                        {					
+                            
+                            
+                            
+                              if(s3.equalsIgnoreCase("Yes"))
+                              {
+                                  
+                                  %>
           
-           <td height="84" align="center"  valign="middle"><div align="center" class="style94">
-                    <%out.println(s6);%> </div></td>
-            
-             <td height="84" align="center"  valign="middle"><div align="center" class="style94">
-                    <%out.println(s7);%> </div></td>
-               
-               
-                <%
-              if(s5.equalsIgnoreCase("No") )
-              {
-              
-              %>
-                <td valign="middle" height="84" style="color:#000000;"align="center"><div align="center">
-                    <div align="center" class="style20 style37 style46"><strong> Yet To Deposit </strong></div>
-                </div></td>
-                <%
-              
-            }else if(s5.equalsIgnoreCase("Yes")){
-              %>
-               <td width="137" align="center"  valign="middle"><div align="center" class="style94">
-                    <%out.println(s5);%>
-                </div></td>
-                <%}%>
-              </tr>
-              <%
-              
-              
-            
+          <p class="style15"><span class="style35" style="font-weight: 700;font-size: 20px;">Your Account Number is :</span><span class="style37">
+            <%out.print(s2);%>
+          </span></p>
+     
+       <p class="style15"><span class="style35" style="font-weight: 700;font-size: 20px;">Hash Code is :</span><span class="style37">
+            <%out.print(s4);%>
+          <%
+                              }
+                              else
+                              {
+                                
+                                  %>
           
-            
-            }
+          <p class="style15"><span class="style35" style="font-weight: 700;font-size: 20px;">Your Account Number is :</span><span class="style37">
+            <%out.print(s2);%>
+          </span></p>
+      
+       <p class="style15"><span class="style35" style="font-weight: 700;font-size: 20px;">Hash Code is :</span><span class="style37">
+            <%out.print(s4);%>
+          <%}
+                        
+                        }
+                      }
+                }
+  
+                else
+                {%>
+         
+          <p class="style15"><span class="style35" style="font-weight: 700;font-size: 20px;">Your Account Number is :</span> <a href="U_AccountRequest.jsp?value1=<%="requests"%>" class="style32">Request for Account Number</a></p>
+          <p>
+            <%}
+                   
+                    
+  
+              connection.close();
             }
             catch(Exception e)
             {
-              out.println(e.getMessage());
+              out.println(e);
             }
             %>
             </table>
+          </p>
+          <!-- <div class="article">
+            <p align="right"></p>
+            <div class="clr"></div>
           </div>
-            <!-- <p align="right"><a href="AdminMain.jsp" class="style11"></a></p>
-            <table width="1121" border="0" cellspacing="2" cellpadding="2">
-              <tr>
-                <td width="906"><div align="left">
-                  <p>&nbsp;</p>
-                  <p>&nbsp;</p>
-                 
-                </div></td>
-              </tr>
-            </table> -->
-            <p class="back-button"><a href="AdminMain.jsp" class="style95">Back</a></p>
-            <h2>&nbsp;</h2>
-          </div>
+          <div class="clr"><a href="UserMain.jsp" class="style11">Back</a></div>
+          <p>&nbsp;</p>
+          <p align="right">&nbsp;</p>
+          <p align="right"><a href="UserMain.jsp" class="style11"></a></p> -->
         </div>
-        <div class="clr"></div>
+        <p class="back-button"><a href="UserMain.jsp" class="style11">Back</a></p>
+        </div>
+    </div>
+  </div>
+  
+  <div class="fbg">
+    <div class="fbg_resize"></div>
+  </div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We are dedicated to providing the secured Banking Transactions with Blockchain</p>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Our Team</h3>
+        <ul>
+          <li>Viswas</li>
+          <li>Pavan</li>
+          <li>Teja</li>
+          <li>Sasank</li>
+          
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:mekaviswas@gmail.com">info@bankingproject.com</a></p>
+        <p>College:<a> Swarnandhra College Of Engineering and Technology</a></p>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" target="_blank">🌐</a>
+          <a href="#" target="_blank">🐦</a>
+          <a href="#" target="_blank">📸</a>
+        </div>
       </div>
     </div>
-  </div>
- 
-<div class="fbg"></div>
-</div>
-<footer>
-  <div class="footer-container">
-    <div class="footer-section">
-      <h3>About Us</h3>
-      <p>We are dedicated to providing the secured Banking Transactions with Blockchain</p>
+  
+    <div class="footer-bottom">
+      &copy; 2025 Securing Banking Transactions with Blockchain | All rights reserved.
     </div>
-
-    <div class="footer-section">
-      <h3>Our Team</h3>
-      <ul>
-        <li>Viswas</li>
-        <li>Pavan</li>
-        <li>Teja</li>
-        <li>Sasank</li>
-        
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h3>Contact Us</h3>
-      <p>Email: <a href="mailto:mekaviswas@gmail.com">info@bankingproject.com</a></p>
-      <p>College:<a> Swarnandhra College Of Engineering and Technology</a></p>
-    </div>
-
-    <div class="footer-section">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="#" target="_blank">🌐</a>
-        <a href="#" target="_blank">🐦</a>
-        <a href="#" target="_blank">📸</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    &copy; 2025 Securing Banking Transactions with Blockchain | All rights reserved.
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
